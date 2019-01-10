@@ -1,5 +1,8 @@
 #include <iostream>
 using namespace std;
+#include <opencv2\core\core.hpp>
+#include<opencv2\highgui\highgui.hpp>
+using namespace cv;
 #include <ctime>
 // Eigen 部分
 #include <Eigen/Core>
@@ -98,6 +101,7 @@ int main( int argc, char** argv )
     time_stt = clock();
     x = matrix_NN.colPivHouseholderQr().solve(v_Nd);
     cout <<"time use in Qr decomposition is " <<1000*  (clock() - time_stt)/(double)CLOCKS_PER_SEC <<"ms" << endl;
-
+	waitKey(0);
+	system("PAUSE");
     return 0;
 }
